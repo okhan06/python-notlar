@@ -1,0 +1,776 @@
+-----Strîng(Dîze)-----
+
+Python daki dizeler, tek tırnak işaretleri veya çift tırnak işaretleri içine alınır.
+"merhaba", "merhaba" ile aynıdır.
+print() işleviyle bir strîng hazır bilgisini görüntüleyebilirsiniz:
+-------------------------------------------------------------------------------------
+---Strîng î Bîr Değîşkene Atama---
+Değişken adının ardından eşittir işareti ve string ile yapılır.
+
+x = "Merhaba Dünya"
+-------------------------------------------------------------------------------------
+---Çok Satırlı Stringler(multiline string)--- 
+Üç tırnak kullanarak bir değişkene çok satırlı bir string atayabilirsiniz.
+
+x = """ Köktürklerde sosyal devlet anlayışının, devrine göre oldukça ileri düzeyde 
+olduğunu görmekteyiz. Yazıtların birçok bölümünde, devletin; fakir, yoksul ve aç 
+milleti, zengin hâle getirip, karnını doyurduğundan, hatta çıplak kişilerin 
+giydirildiğinden bahsedilir """
+-------------------------------------------------------------------------------------
+---Strîngler Array dîr.---
+Diğer birçok popüler programlama dili gibi, Python daki dizeler de unicode 
+karakterleri temsil eden bayt dizileridir.Bununla birlikte, Python un bir karakter
+veri türü yoktur, tek bir karakter yalnızca 1 uzunluğunda bir dizedir.
+
+x = "Merhaba Dûnya"
+prînt(x[0])
+>> M
+-------------------------------------------------------------------------------------
+Bîr Strîngî Döngüye Sokmak
+
+Dizeler dizi olduğundan, bir dizideki karakterler arasında bir for döngüsü 
+ile döngü yapabiliriz.
+
+x ="elma"
+
+for i in x:
+
+    print(i)
+
+>> e
+   l
+   m
+   a
+-------------------------------------------------------------------------------------
+Stringin Uzunluğunu Ölçmek
+
+Bir stringin uzunluğunu almak için len() işlevini kullanırız
+
+x ="elma"
+print(len(x))
+>> 4
+-------------------------------------------------------------------------------------
+NOT Kontrolü
+
+Belirli bir kelime öbeğinin veya karakterin bir string de OLMADIĞINI(NOT) kontrol 
+etmek için not in anahtar kelimesini kullanabiliriz.
+
+x = "Ak akçe karagün içindir"
+print("Kara" not in x)
+>> True
+-------------------------------------------------------------------------------------
+Dilimleme (Slicing)
+
+Stringin bir bölümünü döndürmek için başlangıç ​​dizinini ve bitiş dizinini iki 
+nokta üst üste ile ayırarak belirtebiliriz.
+
+x = "Hayatta en hakiki mürşit ilimdir"
+print(x[0:7])
+>> Hayatta
+
+print(x[:5]) #Başlangıç ​​dizinini dışarıda bırakırsanız, aralık ilk karakterden başlar:
+>> Hayat
+print(x[7:])#Son dizini dışarıda bırakarak, aralık sonuna gider:
+ en hakiki mürşit ilimdir
+print(x[-7:-3])
+>> ilim
+-------------------------------------------------------------------------------------
+
+----- STRING METODLARI-----
+
+capitalize()
+
+İlk karakterin büyük, geri kalanının küçük harf olduğu bir string döndürür.
+Syntax: string.capitalize() 
+
+x = "ağaç Yaşken EğiLir"
+print(x.capitalize())
+
+>> Ağaç yaşken eğilir
+
+----------------------------------------------------
+upper()
+
+Upper() yöntemi, tüm karakterlerin büyük harf olduğu bir dize döndürür.
+Semboller ve Sayılar dikkate alınmaz.
+Syntax:string.upper()
+
+a  = "Python Programlama Dili "
+a = a.upper()
+print(a)
+
+>>PYTHON PROGRAMLAMA DILI 
+
+----------------------------------------------------
+
+lower()
+
+Tüm karakterlerin küçük harf olduğu bir dize döndürür.
+Semboller ve Sayılar dikkate alınmaz.
+Syntax:string.lower()
+
+a = "Python Programlama Dili "
+a = a.lower()
+print(a)
+
+>> python programlama dili 
+
+----------------------------------------------------
+
+casefold()
+
+casefold() yöntemi, tüm karakterlerin küçük harf olduğu bir dize döndürür.
+Bu yöntem lower() yöntemine benzer, ancak casefold() yöntemi daha güçlüdür, daha agresiftir, 
+yani daha fazla karakteri küçük harfe dönüştürür ve iki diziyi karşılaştırırken 
+daha fazla eşleşme bulur ve her ikisi de casefold kullanılarak dönüştürülür. 
+Syntax:string.casefold()
+
+string = "ß"
+print("Using lower():", string.lower())
+print("Using casefold():", string.casefold())
+
+>> Using lower(): ß
+>> Using casefold(): ss
+
+
+   lower()                                           casefold()
+Yalnızca ASCII karakterleri                    Hem ASC hem de ASC olmayan 
+küçük harfe dönüştürür                         karakterleri dönüştürür.
+--------------------------------------------------------------------------------------------
+Yalnızca büyük/küçük harfe duyarsız            Hem büyük küçük harfe duyarlı hem de
+dize karşılaştırması için uygundur.            duyarlı olmayan dize karşılaştırmaları için uygundur.
+--------------------------------------------------------------------------------------------
+casefold() dan daha performanslıdır.           lower() dan daha yavaştır.
+
+----------------------------------------------------
+
+swapcase()
+
+stringdeki büyük harfleri küçük,küçük harfleri büyük hale getirir.
+Syntax : string.swapcase()
+
+a = "Python Programlama Dili"
+print(a.swapcase())
+
+>> pYTHON pROGRAMLAMA dILI
+
+----------------------------------------------------
+
+title()
+Her sözcükteki ilk karakterin büyük olduğu bir dize döndürür. Başlık veya başlık gibi.
+Kelime bir sayı veya sembol içeriyorsa, ondan sonraki ilk harf büyük harfe dönüştürülür.
+Syntax: string.title()
+
+a = "python programlama dili"
+print(a.title())
+
+>> Python Programlama Dili
+
+----------------------------------------------------
+
+center()
+
+Dolgu karakteri olarak belirtilen bir karakteri (def = boşluk) kullanarak dizeyi merkeze hizalar.
+Syntax: string.center(length, character)
+lenght = (req) Döndürülecek dize uzunluğu # ortalanacak string uzunluğuda lenght içine dahil
+character = (opt) Dolgu karakteri
+
+a = "python"
+a = a.center(16,"*")
+print(a)
+
+>> *****python*****
+
+----------------------------------------------------
+
+count()
+
+Belirtilen bir değerin dizede kaç kez göründüğünü döndürür.
+Syntax: string.count(value, start, end) 
+value = string de aranacak değer
+start = arama başlatılacak konum(def = 0)
+end = arama sonlandırılacak değer(def = string sonu)
+# değer bulunamazsa 0 döndürür.
+
+z = "el elden üstündür"
+print(z.count("el"))
+
+>> 2
+
+----------------------------------------------------
+
+encode()
+
+encode() yöntemi, belirtilen kodlamayı kullanarak dizeyi kodlar. 
+Kodlama belirtilmezse UTF-8 kullanılacaktır.
+Syntax:string.encode(encoding=encoding, errors=errors) 
+encoding = (opt)Kullanılacak kodlamayı belirten bir String. Varsayılan UTF-8'dir
+errors = Hata yöntemini belirten bir String. Yasal değerler şunlardır:
+--'backslashreplace':kodlanamayan karakter yerine backslash koy
+--'ignore':kodlanamayan karakteri yoksay
+--'namerplace':kodlanmayan karakteri karakteri açıklayan bir metinle değiştirir.
+--'strict':başarısızlık durumunda hata ver.
+--'replace':kodlanamayan karakteri ? ile değiştir.
+--'xmlcharrefreplace':karakteri xml karakteri ile değiştir.
+
+x = "karargâh"
+
+print(x.encode(encoding="ascii",errors="backslashreplace"))
+print(x.encode(encoding="ascii",errors="ignore"))
+print(x.encode(encoding="ascii",errors="namereplace"))
+print(x.encode(encoding="ascii",errors="replace"))
+print(x.encode(encoding="ascii",errors="xmlcharrefreplace"))
+
+>> b'kararg\\xe2h'
+>> b'karargh'
+>> b'kararg\\N{LATIN SMALL LETTER A WITH CIRCUMFLEX}h'
+>> b'kararg?h'
+>> b'kararg&#226;h'
+
+----------------------------------------------------
+
+find()
+
+find() yöntemi, belirtilen değerin ilk geçtiği yeri bulur.
+Değer bulunmazsa find() yöntemi -1 değerini döndürür.find() yöntemi, index() yöntemiyle
+hemen hemen aynıdır, tek fark, değer bulunmazsa index() yönteminin bir istisna oluşturmasıdır.
+Syntax: string.find(value, start, end) 
+value = (req)aranacak değer
+start = (opt)aramaya başlanacak index(def = 0)
+end = (opt)aramayı sonlandıracağımız deger(def = string sonu)
+
+a  = "Python Programlama Dili "
+print(a.find("P",5,15))
+
+>> 7
+
+----------------------------------------------------
+
+rfind()
+find metoduna benzer tek farkı taramaya sondan başlar.
+Syntax: string.find(value, start, end) 
+value = (req)aranacak değer
+start = (opt)aramaya başlanacak index(def = 0)
+end = (opt)aramayı sonlandıracağımız deger(def = string sonu)
+
+a  = "Python Programlama Dili "
+print(a.rfind("P"))
+
+>> 7
+
+----------------------------------------------------
+
+index()
+
+index() yöntemi, belirtilen değerin ilk geçtiği yeri bulur.
+Değer bulunamazsa index() yöntemi bir istisna oluşturur.
+ 
+find ve index metodu farkları:
+
+
+            index()                                             find()
+aranan değer bulunamazsa istisna                aynı durumda find() metodu -1 değeri döndürür
+döndürür 
+
+alt dizenin bulunduğundan emin olunmayan        aynı durumda kullanılabilir.
+durumlarda kullanılmamalıdır.
+
+string,list ve tuple'a kullanılabilir           sadece string e uygulanır.
+
+koşullu ifade ile kullanılmaz                   alt dize bulunamazsa bir ifadeyi yürütmek için
+                                                koşullu ifade ile kullanılır.
+
+
+----------------------------------------------------
+
+rindex()
+
+index metoduna benzer tek farkı aramaya sondan başlar.
+
+a  = "Python Programlama Dili "
+print(a.rindex("P"))
+
+>> 7
+
+----------------------------------------------------
+
+expantabs()
+Expandtabs() yöntemi, sekme boyutunu belirtilen sayıda boşluk olarak ayarlar.7
+Syntax : string.expandtabs(tabsize) 
+tabsize = (opt)Sekme boyutunu belirten bir sayı. Varsayılan sekme boyutu 8'dir
+
+z = "L\ti\tn\tu\tx"
+
+print(z.expandtabs(2))
+print(z.expandtabs(4))
+print(z.expandtabs(6))
+print(z.expandtabs())
+
+>> L i n u x
+>> L   i   n   u   x
+>> L     i     n     u     x
+>> L       i       n       u       x
+
+----------------------------------------------------
+
+join()
+
+join() yöntemi, tüm öğeleri yinelenebilir bir şekilde alır ve bunları tek bir dizgede birleştirir.
+Ayırıcı olarak bir dize belirtilmelidir.
+Syntax: string.join(iterable) 
+iterable = (req)Döndürülen tüm değerlerin dize olduğu yinelenebilir herhangi bir nesne
+
+a  = "Python"
+print("-".join(a))​
+
+>> P-y-t-h-o-n
+
+# liste ile kullanım:
+a = ['p','y','t','h','o','n']
+print("*".join(a))
+
+>> p*y*t*h*o*n
+
+# tuple ile kullanım
+
+a = ('p','y','t','h','o','n')
+print('/'.join(a))
+
+>> p/y/t/h/o/n
+
+# set(küme) ile kullanım
+
+a = {'1','2','3','4','4','1'}
+print('-'.join(a))
+
+>> 2-1-3-4 # kümeler benzersiz değer içerdiği için 4 ve 1 değerleri çıktıda 1'er kere var
+
+# dictionary(sözlük) ile kullanım
+
+a = {'python':1,'programlama':2,'dili':3}
+print('-'.join(a))
+
+>> python-programlama-dili 
+# Bir dizgiyi sözlükle birleştirirken, değerlerle değil Python sözlüğünün anahtarlarıyla birleşir.
+
+----------------------------------------------------
+
+replace()
+
+replace() yöntemi, belirtilen bir tümceciği belirtilen başka bir tümcecik ile değiştirir.
+# Not: Başka bir şey belirtilmezse, belirtilen ifadenin tüm oluşumları değiştirilecektir.
+Syntax: string.replace(oldvalue, newvalue, count) 
+oldvalue = (req) değiştirilecek stringin
+newvalue = (req) yeni dize
+count = (opt)oldvalue nin kaç tekrarını değiştirmek istediğinizi belirten bir sayı.(def = hepsini değiştir)
+
+a = "birdir bir "
+print(a.replace('bir','iki'))
+
+>> ikidir iki 
+
+a = "birdir bir "
+print(a.replace('bir','iki',1))
+
+ikidir bir # değiştirmeye 0 dan başlar.
+
+----------------------------------------------------
+
+zfill()
+
+Belirtilen uzunluğa ulaşana kadar dizenin başına sıfırlar (0) ekler.
+len parametresinin değeri dizginin uzunluğundan küçükse doldurma yapılmaz.
+Syntax: string.zfill(len)
+len = (req)stringin  istenen uzunluğunu belirten bir sayı
+
+sayi = "7"
+print(sayi.zfill(3))
+
+>> 007
+
+----------------------------------------------------
+
+split()
+
+split() yöntemi, bir dizeyi bir listeye böler.
+Ayırıcıyı belirtebilirsiniz, varsayılan ayırıcı herhangi bir boşluktur.
+Not: maxsplit belirtildiğinde, liste belirtilen sayıda eleman artı bir içerecektir.
+Syntax: string.split(separator, maxsplit) 
+seperator = (opt)String bölerken kullanılacak ayırıcıyı belirtir(def = boşluk)
+maxsplit = (opt)Kaç bölme yapılacağını belirtir. Varsayılan değer, "tüm oluşumlar" olan -1'dir.
+
+x = "Python, nesne yönelimli, yorumlamalı, birimsel ve etkileşimli yüksek seviyeli bir programlama dilidir."
+
+print(x.split())
+print(x.split(","))
+print(x.split(maxsplit = 2))
+
+>> ['Python,', 'nesne', 'yönelimli,', 'yorumlamalı,', 'birimsel', 've', 'etkileşimli', 'yüksek', 'seviyeli', 'bir', 'programlama', 'dilidir.']
+# varsayılan ayraç olarak boşluk seçildi
+>> ['Python', ' nesne yönelimli', ' yorumlamalı', ' birimsel ve etkileşimli yüksek seviyeli bir programlama dilidir.']
+# varsayılan ayırıcı olarak "," seçildi
+>> ['Python,', 'nesne', 'yönelimli, yorumlamalı, birimsel ve etkileşimli yüksek seviyeli bir programlama dilidir.']
+# varsayılan ayırıcı olarak boluk seçildi ve sadece 2 bölünme seçildi
+
+----------------------------------------------------
+
+rsplit()
+
+split yöntemine benzer tek farkı bölmeye sağdan başlar
+
+----------------------------------------------------
+
+splitlines()
+
+splitlines() yöntemi, bir dizeyi bir listeye böler. Bölme, satır sonlarında yapılır.
+Syntax: string.splitlines(keeplinebreaks) 
+keeplinebreaks = (opt)Satır sonlarının dahil edilip edilmeyeceğini (True) veya içermeyeceğini (False) belirtir. Varsayılan değer False dir
+
+x = "Python, nesne yönelimli ve yorumlamalı\nbirimsel ve etkileşimli yüksek seviyeli\nbir programlama dilidir."
+
+print(x)
+print(x.splitlines(True))
+print(x.splitlines(False))
+
+Python, nesne yönelimli ve yorumlamalı # normal çıktı
+birimsel ve etkileşimli yüksek seviyeli
+bir programlama dilidir.
+['Python, nesne yönelimli ve yorumlamalı\n', 'birimsel ve etkileşimli yüksek seviyeli\n', 'bir programlama dilidir.']
+# keeplinebreaks True = satır sonları dahil
+['Python, nesne yönelimli ve yorumlamalı', 'birimsel ve etkileşimli yüksek seviyeli', 'bir programlama dilidir.']
+# keeplinebreaks False = satır sonları hariç
+
+----------------------------------------------------
+
+maketrans() ve translate()
+
+maketrans metodu,gmaketrans() yöntemi, belirtilen karakterleri değiştirmek için translate() 
+yöntemiyle kullanılabilen bir eşleme tablosu döndürür.
+Syntax: str.maketrans(x, y, z)
+x = Yalnızca bir parametre belirtilirse, bu, değiştirmenin nasıl gerçekleştirileceğini açıklayan bir sözlük olmalıdır. 
+İki veya daha fazla parametre belirtilirse, bu parametrenin değiştirmek istediğiniz karakterleri belirten 
+bir dize olması gerekir.
+y = (opt)İsteğe bağlı. x parametresiyle aynı uzunlukta bir dize. İlk parametredeki her karakter, bu dizide karşılık 
+gelen karakterle değiştirilecektir.
+z = (opt)Orijinal diziden hangi karakterlerin kaldırılacağını açıklayan bir string.
+
+text = "hi joe"
+x = "j,o,e"
+y = "s,a,m"
+tablo = str.maketrans(x, y)
+print(text.translate(tablo))
+
+>> hi sam
+
+----------------------------------------------------
+
+strip() lstrip() rstrip()
+ 
+Baştaki (baştaki boşluklar) ve sondaki (sondaki boşluklar) karakterleri kaldırır (boşluk, kaldırılacak varsayılan baştaki karakterdir)
+Syntax:string.strip(characters) 
+characters = Baştaki/sondaki karakterler olarak kaldırılacak bir dizi karakter
+
+text = "....****aaaaaPythonaaa....      ***"
+x = text.strip(" .*a")
+print(x)
+
+>> Python
+
+# lstrip strip metodunun sadece sol taraftaki karakterleri kaldıran tipidir.
+# rstrip strip metodunun sadece sağ taraftaki karakterleri kaldıran tipidir. 
+
+----------------------------------------------------
+
+isalnum()
+
+Tüm karakterler alfanümerik, yani alfabe harfi (a-z) ve rakamlardan (0-9) ise True değerini döndürür.
+Alfanümerik olmayan karakterlere örnek: (boşluk)!#%&? vesaire.
+Syntax: string.isalnum() 
+
+text = "area51"
+print(text.isalnum())
+
+>> True
+
+----------------------------------------------------
+
+isalpha()
+Tüm karakterler alfabe harfleri (a-z) ise, isalpha() yöntemi True değerini döndürür.
+Alfabe harfleri olmayan karakterlere örnek: (boşluk)!#%&? vesaire.
+Syntax: string.isalpha()
+
+text = "area51"
+print(text.isalpha())
+
+>> False
+
+----------------------------------------------------
+
+isdecimal()
+
+Tüm karakterler ondalık ise (0-9) isdecimal() yöntemi True değerini döndürür.
+# Bu yöntem unicode nesnelerde de kullanılabilir.
+Syntax:string.isdecimal()
+
+text = "29091923"
+print(text.isdecimal())
+>> True
+
+x = "\u0030" # unicode 0
+print(text.isdecimal())
+>> True
+
+----------------------------------------------------
+
+isnumeric() 
+
+Tüm karakterler sayısalsa (0-9) True, aksi halde False döndürür.
+² ve ¾ gibi üsler de sayısal değerler olarak kabul edilir.
+"-9" ve "11.55" sayısal değerler olarak DEĞİLDİR, çünkü dizedeki tüm karakterler sayısal olmalıdır ve - ve . değiller.
+Syntax:string.isnumeric()
+
+x = "\u00B2" #unicode for ²
+y = "1km2"
+print(x.isnumeric())
+print(y.isnumeric())
+
+>> True
+>> False
+
+----------------------------------------------------
+
+isdigit()
+
+Tüm karakterler rakamsa True, aksi halde False döndürür.
+² gibi üsler de bir rakam olarak kabul edilir.
+Syntax: string.isdigit()
+
+x = "\u00B2" #unicode for ²
+y = "0"
+print(x.isdigit())
+print(y.isdigit())
+
+>> True
+>> True
+
+----------------------------------------------------
+
+isidentifier()
+
+Bir string, yalnızca alfanümerik harfler (a-z) ve (0-9) veya alt çizgi (_) içeriyorsa geçerli bir tanımlayıcı
+olarak kabul edilir. Geçerli bir tanımlayıcı bir sayı ile başlayamaz veya boşluk içeremez.
+Syntax: string.isidentifier()
+
+x = "_area51_"
+y = " area51 "
+print(x.isidentifier())
+print(y.isidentifier())
+
+>> True
+>> False
+
+----------------------------------------------------
+
+islower() ve isupper()
+
+islower(),tüm karakterler küçük harf ise True, aksi halde False döndürür.
+Rakamlar, semboller ve boşluklar kontrol edilmez, sadece alfabe karakterleri kontrol edilir.
+Syntax: string.islower()
+
+isupper(),tüm karakterler büyük harf ise True, aksi takdirde False döndürür.
+Rakamlar, semboller ve boşluklar kontrol edilmez, sadece alfabe karakterleri kontrol edilir.
+Syntax: string.isupper()
+
+x = "area51"
+y = "MUSTAFA KEMAL ATATÜRK 1881-1938"
+print(x.islower())
+print(y.isupper())
+
+>> True
+>> True
+
+----------------------------------------------------
+
+isprintable()
+
+Tüm karakterler yazdırılabilirse True, aksi takdirde False döndürür.
+Yazdırılamayan karakter örnekleri, satır başı ve satır besleme olabilir.
+Syntax: string.isprintable()
+
+x = "Python\nProgramlama\nDili"
+print(x.isprintable())
+
+>> False
+
+----------------------------------------------------
+
+isspace()
+
+Bir stringdeki tüm karakterler boşluksa True değil ise False döndürür.
+Syntax:string.isspace()
+
+x = "  Python  "
+y = "          "
+print(x.isspace())
+print(y.isspace())
+
+>> False
+>> True
+
+----------------------------------------------------
+
+istitle()
+
+Bir metindeki tüm kelimeler büyük harfle başlıyorsa ve kelimenin geri kalanı küçük harf ise True
+aksi halde False döndürür.
+# Semboller ve sayılar dikkate alınmaz.
+
+x = "Mustafa Kemal ATATÜRK"
+y = "Türkiye Cumhuriyeti"
+print(x.istitle())
+print(y.istitle())
+
+>> False
+>> True
+
+----------------------------------------------------
+
+partition() ve rpartititon()
+
+Belirtilen bir stringi arar ve stringi üç öğe içeren bir demet halinde böler.
+İlk eleman, belirtilen dizgeden önceki kısmı içerir.
+İkinci öğe, belirtilen dizeyi içerir.
+Üçüncü eleman, dizeden sonraki kısmı içerir.
+#Not: Bu yöntem, belirtilen dizenin ilk geçtiği yeri arar.
+Syntax: string.partition(value) 
+value = (req) aranacak string
+
+x = "Ankara Büyükşehir Belediyesi"
+z = x.partition("Büyükşehir") # büyük küçük harf ayrımı var
+y = x.partition("Ankara") # büyük küçük harf ayrımı var
+
+print(z)
+print(y)
+print(type(z))
+print(type(y))
+
+('Ankara ', 'Büyükşehir', ' Belediyesi')
+('', 'Ankara', ' Büyükşehir Belediyesi')
+<< class 'tuple'>
+<< class 'tuple'>
+
+rpartition partition metodundan farkı stringi taramaya sağdan başlar.
+
+x = "Ankara Büyükşehir Belediyesi ve İstanbul Büyükşehir Belediyesi"
+
+z = x.rpartition("Büyükşehir")
+print(z)
+print(type(z))
+
+('Ankara Büyükşehir Belediyesi ve İstanbul ', 'Büyükşehir', ' Belediyesi')
+<class 'tuple'>
+
+----------------------------------------------------
+
+format metodu
+
+format() yöntemi, belirtilen değerleri biçimlendirir ve bunları dizenin yer tutucusunun içine ekler.
+Yer tutucu, {} süslü parantez kullanılarak tanımlanır: 
+format() yöntemi, biçimlendirilmiş dizeyi döndürür.
+Syntax:string.format(value1, value2...) 
+value = Biçimlendirilmesi ve dizeye eklenmesi gereken bir veya daha fazla değer.
+        Değerler ya virgülle ayrılmış bir değerler listesi, bir anahtar=değer listesi ya da her ikisinin birleşimidir.
+        #Değerler herhangi bir veri tipinde olabilir.
+
+x = "merhaba adım {} ve {} yaşındayım"
+print(x.format("john Doe",45))
+y = "merhaba adım {isim} ve {yaş} yaşındayım"
+print(y.format(isim = "john Doe",yaş = 45))
+z = "merhaba adım {0} ve {1} yaşındayım"
+print(z.format("john doe", 45))
+
+>> merhaba adım john Doe ve 45 yaşındayım
+>> merhaba adım john Doe ve 45 yaşındayım
+>> merhaba adım john doe ve 45 yaşındayım
+
+
+Biçimlendirme Türleri:
+Yer tutucuların içine, sonucu biçimlendirmek için bir biçimlendirme türü ekleyebilirsiniz:
+
+x = "merhaba adım {} ve {:>8} yaşındayım" # sonucu saga hizalar.
+print(x.format("john Doe",45))
+x = "merhaba adım {} ve {:<8} yaşındayım" # sonucu sola hizalar.
+print(x.format("john Doe",45))
+x = "merhaba adım {} ve {:^8} yaşındayım" # sonucu ortaya hizalar.
+print(x.format("john Doe",45))
+
+>> merhaba adım john Doe ve       45 yaşındayım
+>> merhaba adım john Doe ve 45       yaşındayım
+>> merhaba adım john Doe ve    45    yaşındayım
+
+x = "Erzurumda sıcaklık {:=5} derece" # işareti en sola yaslar.
+print(x.format(-25))
+>> Erzurumda sıcaklık -  25 derece
+
+x = "Gece sıcaklık {:+} ile {:+} derece arasında olacak" #Sonucun pozitif mi yoksa negatif mi olduğunu belirtmek için artı işareti kullanın
+print(x.format(-3,2))
+>> Gece sıcaklık -3 ile +2 derece arasında olacak
+
+x = "Gece sıcaklık {:-} ile {:+} derece arasında olacak"
+print(x.format(-3,2))
+>> Gece sıcaklık -3 ile +2 derece arasında olacak
+
+txt = "evren {:,} yaşında." # virgülü binlik ayraç olarak kullan
+print(txt.format(13800000000))
+>> evren 13,800,000,000 yaşında.
+
+txt = "evren {:_} yaşında." # alt tire yi binlik ayraç olarak kullan
+print(txt.format(13800000000))
+>> evren 13_800_000_000 yaşında.
+
+txt = "{} sayısının binary versiyonu {:b}"# binary e cevirir.
+print(txt.format(4,4))
+>> 4 sayısının binary versiyonu 100
+
+x = "Tatile {:d} gün kaldı." # Ondalık biçime çevir.
+print(x.format(0b101))
+>> Tatile 5 gün kaldı.
+
+x = "Tatile {:e} gün kaldı." # bilimsel biçime çevir.(lower case)
+print(x.format(5))
+Tatile 5.000000e+00 gün kaldı.
+
+x = "Tatile {:E} gün kaldı." # bilimsel biçime çevir(upper case)
+print(x.format(5))
+Tatile 5.000000E+00 gün kaldı.
+
+x = "satış fiyatı {:.2f} liradır." # .2 (virgül den sonra iki sayı) float a çevirir.
+print(x.format(500))
+satış fiyatı 500.00 liradır.
+
+{:o} octal format
+{:x} hex format
+{:X} hex format(uppercase)
+{:n} number format
+{:%} yüzde biçimi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
