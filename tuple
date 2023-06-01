@@ -1,0 +1,30 @@
+TUPLE (DEMET)
+------------------------------------------------------------------------------
+Demetler, birden çok öğeyi tek bir değişkende depolamak için kullanılır.
+Demet, sıralı ve değiştirilemez bir koleksiyondur.
+Demetler yuvarlak () parantezlerle yazılır.
+
+atar = ("johny","tony","hans","merkel")
+print(type(atar))
+>> <class 'tuple'>
+
+-- Demet öğeleri sıralıdır, değiştirilemez ve yinelenen değerlere izin verir.
+-- Demetler değiştirilemez, yani demet oluşturulduktan sonra öğeleri değiştiremez, ekleyemez veya kaldıramayız.
+# Not: Yalnız listeye dönüştürüp elemanı değiştirip tekrar tuple haline getirebiliriz.
+
+-- len() ile kaç ögeye sahip olduğunu bulabiliriz.
+atar = ("johny","tony","hans","merkel")
+print(len(atar))
+>> 4
+
+-- Yalnızca bir öğe içeren bir grup oluşturmak için, öğeden sonra bir virgül eklemelisiniz, 
+aksi halde Python bunu bir grup olarak tanımayacaktır.
+x = ("kalem",)
+print(type(x))
+class 'tuple'>
+
+x = ("kalem")
+print(type(x))
+<class 'str'>
+
+
