@@ -1,0 +1,186 @@
+LİSTELER
+---------------------------------------------------------------------------------------------------
+Listeler, Python dilinin ayrılmaz bir parçası olan en basit kaplardır. Listelerin her zaman homojen 
+olması gerekmez, bu da onu Python'daki en güçlü araç yapar. Tek bir liste, Tamsayılar, Dizeler ve 
+Nesneler gibi DataType'ları içerebilir. Listeler değişkendir ve dolayısıyla oluşturulduktan sonra
+bile değiştirilebilirler.
+
+
+liste oluşturma:
+Python'da Liste Oluşturma Python'daki listeler, diziyi köşeli parantezler [] içine yerleştirerek 
+oluşturulabilir.
+
+bos_liste = []
+print(bos_liste)
+>> []
+
+liste = [10,20,30]
+print(liste)
+>> [10,20,30]
+
+liste elemanlarına erişim:
+a = [10,20,30,40]
+print(a[0])
+>> 10
+
+içiçe liste elemanlarına erişim:
+a = [[10,20,30],[40,50,60]]
+print(a[0][1],a[1][0])
+>> 20 40
+
+liste de negatif indeksleme:
+a = [10,20,30]
+print(a[-1])
+>> 30
+
+listenin boyutunu alma:
+a = [10,20,30,40]
+print(len(a))
+>> 4
+
+LİSTE METODLARI:
+------------------------------------------------------------------------------
+append()
+append() yöntemi, listenin sonuna bir öğe ekler.
+Syntax = list.append(elmnt) 
+elmnt:(req) Herhangi bir türden bir öğe (dize, sayı, nesne vb.)
+
+a = [10,20,30,40]
+a.append(50)
+print(a)
+>> [10,20,30,40,50]
+---------------------------------------------------------
+insert()
+Belirtilen değeri belirtilen konuma ekler.
+Syntax = list.insert(pos, elmnt) 
+pos:(req)değerin hangi konuma girileceğini belirten sayı
+elmnt:(req)Herhangi bir türden bir öğe (dize, sayı, nesne vb.)
+
+a = [10,20,30,40]
+a.insert(0,50)
+print(a)
+>> [50,10,20,30,40]
+---------------------------------------------------------
+extend()
+Belirtilen liste öğelerini geçerli listenin sonuna ekler.
+Syntax = list.extend(iterable)
+iterable:Gerekli. Yinelenebilir herhangi bir (liste, set, tuple, vb.)
+
+a = [10,20,30,40]
+b = ('ali','ahmet','ayse')
+a.extend(b)
+print(a)
+>> [10, 20, 30, 40, 'ali', 'ahmet', 'ayse']
+
+a = [10,20,30,40]  # bir string i listeye extend ederken 
+b = ('ali')
+a.extend(b)
+print(a)
+>> [10, 20, 30, 40, 'a', 'l', 'i']
+---------------------------------------------------------
+pop()
+listeden öge kaldırmaya yarar.
+Syntax =  list.pop(pos) 
+pos : (opt)Kaldırmak istediğiniz öğenin konumunu belirten bir sayı,
+varsayılan değer -1'dir ve son öğeyi döndürür
+
+a = ["elma","armut","kiraz","muz"]
+a.pop() # değer belirtmediğimiz zaman sondaki ögeyi siler.
+print(a)
+>> ['elma', 'armut', 'kiraz']
+
+a = ["elma","armut","kiraz","muz"]
+a.pop(1)
+print(a)
+>> ['elma','kiraz','muz']
+
+---------------------------------------------------------
+clear()
+listedeki tüm ögeleri siler.
+Syntax = list.clear()
+
+a = [10,20,30]
+a.clear()
+print(a)
+[]
+----------------------------------------------------------
+remove()
+Remove() yöntemi, belirtilen değere sahip öğenin ilk geçtiği yeri kaldırır.
+Syntax = list.remove(elmnt)
+
+a=[10,20,30,40,10]
+a.remove(10)
+print(a)
+>> [20, 30, 40, 10]
+---------------------------------------------------------
+reverse()
+reverse() yöntemi, öğelerin sıralama düzenini tersine çevirir.
+Syntax = list.reverse() 
+
+a =  ["elma","armut","muz"]
+a.reverse()
+print(a)
+['muz', 'armut', 'elma']
+----------------------------------------------------------
+index()
+index() yöntemi, belirtilen değerin ilk geçtiği yerdeki konumu döndürür.
+Syntax = list.index(elmnt) 
+elmnt: (req)aranacak eleman
+
+a = ["elma","armut","muz","elma"]
+print(a.index("elma"))
+>> 0
+----------------------------------------------------------
+count()
+count() yöntemi, belirtilen değere sahip öğelerin sayısını döndürür.
+Syntax = list.count(value) 
+value: (req)aranacak değer
+
+a = [10,20,30,10,50,10]
+print(a.count(10)]
+>> 3
+----------------------------------------------------------
+copy()
+belirtilen listenin bir kopyasını döndürür.
+Syntax = list.copy()
+----------------------------------------------------------
+sort()
+sort() yöntemi, listeyi varsayılan olarak artan şekilde sıralar.
+Syntax = list.sort(reverse=True|False, key=myFunc) 
+reverse : (opt) reverse=True listeyi azalan biçimde sıralar. def = False(artan biçimde sıralar)
+key: (opt) Sıralama ölçütlerini belirtmek için bir işlev
+
+kus_serisi = ["sahin","dogan","serce"]
+kus_serisi.sorted(reverse = True)
+print(kus_serisi)
+>> ['serce', 'sahin', 'dogan']
+
+def fonksiyonum(e):
+  return len(e)
+kus_serisi = ["sahin","dogan_slx","sercedes"]
+kus_serisi.sort(key = fonksiyonum)
+print(kus_serisi)
+>> ['sahin', 'sercedes', 'dogan_slx']
+----------------------------------------------------------
+List Comprehension
+Liste kavrama, mevcut bir listenin değerlerine dayalı olarak yeni bir liste oluşturmak 
+istediğinizde daha kısa bir sözdizimi sunar.
+Syntax = newlist = [expression for item in iterable if condition == True]
+
+a = ["elma","armut","kivi","muz","kiraz"]
+z = [x for x in a if "a" in x]
+print(z)
+>> ['elma', 'armut', 'kiraz']
+
+
+y = [x for x in range(20) if x%2 == 0]
+print(y)
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+
+
+
+
+
+
+
