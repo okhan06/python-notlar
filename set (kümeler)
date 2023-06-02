@@ -1,0 +1,43 @@
+# SET (KÜMELER)
+------------------------------------------------------------------------------------
+Kümeler, birden çok öğeyi tek bir değişkende depolamak için kullanılır.
+Küme, sıralanmamış, değiştirilemez* ve dizinlenmemiş bir koleksiyondur.
+# Not: Set öğeleri değiştirilemez, ancak öğeleri kaldırabilir ve yeni öğeler ekleyebilirsiniz.
+# Not: Kümeler sırasızdır, dolayısıyla öğelerin hangi sırada görüneceğinden emin olamazsınız.
+Kümeler süslü parantezlerle {} yazılır.
+
+Öğeleri Ayarlama:
+------------------
+Küme öğeleri sırasızdır, değiştirilemez ve yinelenen değerlere izin vermez.
+
+Sıralama:
+----------
+Sırasız, bir kümedeki öğelerin tanımlı bir düzeni olmadığı anlamına gelir.
+Küme öğeleri, her kullandığınızda farklı bir sırada görünebilir ve dizin veya anahtarla başvurulamaz.
+
+Öge Değiştirme:
+----------------
+Set öğeleri değiştirilemez, yani set oluşturulduktan sonra öğeleri değiştiremeyiz.
+Bir küme oluşturulduktan sonra öğelerini değiştiremezsiniz ancak öğeleri kaldırabilir ve yeni öğeler ekleyebilirsiniz.
+
+Bir Setin Uzunluğunu Ölçme:
+----------------------------
+Bir setin kaç öğeye sahip olduğunu belirlemek için len() işlevini kullanın.
+
+a = {"elma","armut",99,True}
+print(len(a))
+print(type(a))
+
+>> 4
+>> <class 'set'>
+
+Set Oluşturma:
+---------------
+set oluşturmak için set() yapıcısı kullanılır.
+
+kume = set(("elma","armut",88)) # çift paranteze dikkat........
+print(type(kume))
+
+>> <class 'set'>
+
+
