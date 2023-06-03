@@ -1,0 +1,176 @@
+BOOLEAN
+---------------------------------------------------------------------
+Boolean iki değerden birini temsil eder: dogru True yanlış False.
+<class 'bool'> çıktısı, değişkenin bir boole veri türü olduğunu belirtir.
+a = True
+type(a)
+>> <class 'bool'>
+--------------------
+Boole Değerleri:
+
+Programlamada genellikle bir ifadenin True mu yoksa False mı olduğunu bilmeniz gerekir.
+Python'da herhangi bir ifadeyi değerlendirebilir ve True veya False olmak üzere iki yanıttan birini alabilirsiniz.
+İki değeri karşılaştırdığınızda, ifade değerlendirilir ve Python, Boole yanıtını döndürür:
+
+print(10>9)
+print(5==5)
+print(9>15)
+
+>> True
+>> True
+>> False
+
+bool() fonksiyonu, herhangi bir değeri değerlendirmenize ve karşılığında True veya False vermenize izin verir,
+
+print(bool("Merhaba Dünya")) # string i değerlendirme
+print(bool(15)) # sayıyı değerlendirme
+
+>> True
+>> True
+
+x = "Merhaba dünya"
+y = 15
+
+print(bool(x))
+print(bool(y))
+
+>> True
+>> True
+
+-- Bir tür içeriğe sahipse, hemen hemen her değer True olarak değerlendirilir.
+-- Boş diziler dışında tüm diziler True'dur.
+-- 0 dışında herhangi bir sayı True'dur.
+-- Boş olanlar dışında tüm liste, demet, küme ve sözlük True'dur.
+
+
+OPERATORLER
+------------------------------------------------------------------------------
+Operatörler, değişkenler ve değerler üzerinde işlem yapmak için kullanılır.
+----------------------------------------------------------------------------------------
+| Operatör          |             Tanım                                |  Syntax       |
+----------------------------------------------------------------------------------------
+  +                     Toplama                                            x+y
+  -                     Çıkarma                                            x-y
+  *                     Çarpma                                             x*y
+  /                     Bölme (float): birinci işleneni ikinciye böler     x/y
+  //                    Bölme (floor):                                     x//y
+  %                     Modulus:bölümde kalanı verir.                      x%y
+  **                    Kuvvet                                             x**y
+  
+  
+/ bölme(float) Bu operatör tarafından döndürülen bölüm, iki sayının tamsayı olup olmadığına bakılmaksızın her zaman bir kayan sayıdır. 
+
+print(5/5)
+print(10/2)
+print(-10/2)
+print(20.0/2)
+
+>> 1.0
+>> 5.0
+>> -5.0
+>> 10.0
+
+// bölme(floor) Bu operatör tarafından döndürülen bölüm, iletilen bağımsız değişkene bağlıdır. Sayılardan herhangi biri değişken ise, çıktıyı değişken olarak döndürür.
+
+print (10//3)
+print (-5//2)
+print (5.0//2)
+print (-5.0//2)
+
+>> 3
+>> -3
+>> 2.0
+>> -3.0
+
+Python'da Aritmetik Operatörlerin Önceliği
+
+1 - Parantez içi
+2 – Üs Alma
+3 – Çarpma ve Bölme (Çarpma ve bölme aynı önceliğe sahiptir)
+4 - Toplama ve Çıkarma
+
+
+# modulus operatoru bir sayının son hanesini/sayılarını çıkarmamıza yardımcı olur. 
+print(989 % 10)
+print(989 % 100)
+
+>> 9    #son rakamı 
+>> 89   #son iki rakamı
+
+KARŞILAŞTIRMA OPERATÖRLERİ:
+
+----------------------------------------------------------------------------------------
+| Operatör          |             Tanım                                |  Syntax       |
+----------------------------------------------------------------------------------------
+  >                     Büyüktür                                            x > y
+  <                     Küçüktür                                            x < y
+  = =                   Eşittir                                             x = = y
+  ! =                   Eşit Değildir.                                      x ! = y
+  < =                   Küçük Eşittir                                       x < = y
+  > =                   Büyük Eşittir                                       x > = y
+  
+
+#   = bir atama operatörü , == bir karşılaştırma operatörüdür.
+Python'da karşılaştırma operatorleri, aritmetik operatorlerden daha düşük önceliğe sahiptir. 
+Karşılaştırma operatörleri içindeki tüm operatörler aynı öncelik sırasına sahiptir.
+
+
+MANTIKSAL OPERATORLER
+---------------------------------------------------------------------------------------
+Python Mantıksal işleçleri, Mantıksal AND, Mantıksal OR ve Mantıksal DEĞİL işlemlerini gerçekleştirir.
+Koşullu ifadeleri birleştirmek için kullanılır.
+
+----------------------------------------------------------------------------------------
+| Operatör          |             Tanım                                |  Syntax       |
+----------------------------------------------------------------------------------------
+   and                    her iki işlenen dogru ise TRUE  ise TRUE          x and y
+   or                     işlenenlerden biri TRUE ise TRUE                  x or y 
+   not                    işlenen False ise TRUE                            not x
+   
+mantıksal operatörün önceliği 
+1 - Logical not
+2 - logical and
+3 - logical or
+
+
+a = True
+b = False
+ 
+print(a and b)
+print(a or b)
+print(not a)
+
+>> False
+>> True
+>> False
+
+BİTSEL OPERATÖRLER
+---------------------------------------------------------------------------------------------
+Python Bitwise operatörleri, bitler üzerinde hareket eder ve bit-bit işlemleri gerçekleştirir. 
+Bunlar binary sayılar üzerinde işlem yapmak için kullanılır.
+
+Python da, tamsayılar üzerinde bitsel hesaplamalar yapmak için bitsel operatörler kullanılır. 
+Tamsayılar önce ikiliye dönüştürülür ve ardından her bir bit veya karşılık gelen bit çifti 
+üzerinde işlemler gerçekleştirilir, bu nedenle bitsel operatörler adı verilir. 
+Sonuç daha sonra ondalık biçimde döndürülür.
+
+-------------------------------------------------------------------------------------------
+| Operatör          |             Tanım                                   |  Syntax       |
+-------------------------------------------------------------------------------------------
+   & bitwise AND    eğer her iki işlenen biti de 1 ise; aksi takdirde        x & y
+                     sonuç biti 0'dır.
+-------------------------------------------------------------------------------------------
+   | bitwise OR     işlenen bitlerinden herhangi biri 1 ise; aksi            x | y
+                     halde sonuç bit 0'dır.    
+-------------------------------------------------------------------------------------------
+   ~ bitwise NOT     bitleri tersine çevirir                                   ~x
+-------------------------------------------------------------------------------------------
+   ^ bitwise XOR     işlenen bitlerinden herhangi biri 1 ise sonuç 1,         x ^ y    
+                     ancak ikisi birden değilse, aksi halde sonuçlar bit 0.
+-------------------------------------------------------------------------------------------
+  >> bitwise right   En soldaki bitin kopyalarını soldan iterek sağa          x >>
+             shift   kaydırır ve en sağdaki bitlerin düşmesine izin verir
+------------------------------------------------------------------------------------------- 
+  << bitwise left    Sıfırları sağdan içeri doğru iterek sola kaydırır ve     x <<
+             shift   en soldaki bitlerin düşmesine izin verir.
+-------------------------------------------------------------------------------------------
