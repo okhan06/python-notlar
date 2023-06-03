@@ -40,4 +40,213 @@ print(type(kume))
 
 >> <class 'set'>
 
+Set Metodları
+---------------------------------------------
+
+add()
+
+add() yöntemi, kümeye bir öğe ekler.
+Öğe zaten varsa,öğeyi eklemez.
+Syntax:set.add(elmnt) 
+elmnt:(req)eklenecek öge
+
+a = {"elma","armut","muz"}
+a.add("portakal")
+print(a)
+
+>> {'portakal', 'muz', 'armut', 'elma'}
+------------------------------------
+clear()
+Kümedeki tüm ögeleri siler.
+Syntax:set.clear() 
+
+a = {"elma","armut","muz"}
+a.clear()
+print(a)
+>> set()
+------------------------------------
+discard()
+belirtilen öğeyi kümeden kaldırır.Bu yöntem, remove() yönteminden farklıdır, 
+çünkü belirtilen öğe mevcut değilse remove() yöntemi bir hataya neden olur ve discard() yöntemi olmaz.
+Syntax:set.discard(value) 
+value: Aranacak ve kaldırılacak öge
+
+a = {"elma","armut","muz"}
+a.discard("elma")
+print(a)
+
+>> {'muz', 'armut'}
+-----------------------------------
+pop() 
+pop() yöntemi, kümeden rastgele bir öğeyi kaldırır.
+Bu yöntem, kaldırılan öğeyi döndürür.
+Syntax:set.pop() 
+
+a = {"elma","armut","muz"}
+x = a.pop()
+print(x)
+print(a)
+
+>> 'muz'
+>> {'armut', 'elma'}
+-----------------------------------
+remove()
+remove() yöntemi, belirtilen öğeyi kümeden kaldırır.Bu yöntem, discard() yönteminden farklıdır, 
+çünkü belirtilen öğe mevcut değilse remove() yöntemi bir hataya neden olur ve discard() yönteminde olmaz.
+Syntax:set.remove(item) 
+item:(req)Aranacak ve kaldırılacak öge
+
+a = {"elma","armut","muz"}
+a.remove("elma")
+print(a)
+
+>> {'muz', 'armut'}
+----------------------------------
+update()
+update() yöntemi, başka bir kümeden (veya yinelenebilir herhangi bir başka kümeden) öğeler ekleyerek
+geçerli kümeyi günceller.Her iki sette de bir öğe varsa, güncellenen sette bu öğenin yalnızca bir görünümü olacaktır.
+Syntax:set.update(set) 
+set:(req)Geçerli kümeye yinelenebilir ekleme
+
+a = {"elma","armut","muz"}
+b = {"kivi","çilek","armut"}
+a.update(b)
+print(a)
+print(b)
+
+>> {'kivi', 'çilek', 'elma', 'muz', 'armut'} # set a
+>> {'kivi', 'çilek', 'armut'} # set b 
+----------------------------------
+difference()
+fark() yöntemi, iki küme arasındaki farkı içeren bir küme döndürür.
+Döndürülen küme, yalnızca ilk kümede bulunan ve her iki kümede olmayan öğeleri içerir.
+Syntax:set.difference(set) 
+set:farklılıkları kontrol edilecek set
+
+a = {"elma","armut","muz"}
+b = {"kivi","çilek","armut"}
+print(a.difference(b))
+
+>> {'muz', 'elma'} # a kümesinde olup b kümesinde olmayan ögeler
+----------------------------------
+difference_update()
+difference_update() yöntemi, her iki kümede de bulunan öğeleri kaldırır.
+difference() yönteminden farklıdır, çünkü difference() yöntemi istenmeyen öğeler olmadan yeni
+bir küme döndürür ve difference_update() yöntemi istenmeyen öğeleri orijinal kümeden kaldırır.
+Syntax:set.difference_update(set) 
+set:set:farklılıkları kontrol edilecek set
+
+a = {"elma","armut","muz"}
+b = {"kivi","çilek","armut"}
+print(a)
+print(b)
+
+>> {'muz', 'elma'} # a ve b kğmesinde olan öge a kümesinden kaldırıldı
+>> {'kivi', 'çilek', 'armut'}
+----------------------------------
+intersection()
+intersection() yöntemi, iki veya daha fazla küme arasındaki benzerliği içeren bir küme döndürür.
+karşılaştırma ikiden fazla kümeyle yapılırsa tüm kümelerde bulunan öğeleri içerir.
+Syntax:set.intersection(set1, set2 ... etc) 
+set1,set2,..:(set1 req).(set2...opt)karşılaştırılacak kümeler
+
+a = {"a","b","c"}
+b = {"d","e","c"}
+c = {"f","b","c"}
+x = a.intersection(b,c)
+y = a.intersection(c)
+print(x)
+print(y)
+
+{'c'} # a kümesinin b ve c kümesi ile kesişimi
+{'b', 'c'} # a kümesinin c kümesi ile kesişimi
+----------------------------------
+intersection_update()
+intersection_update() yöntemi, her iki kümede (veya ikiden fazla küme arasında karşılaştırma yapılırsa tüm kümelerde) 
+bulunmayan öğeleri kaldırır.
+intersection_update() yöntemi intersection() yönteminden farklıdır, çünkü intersection() yöntemi istenmeyen öğeler 
+olmadan yeni bir küme döndürür ve intersection_update() yöntemi istenmeyen öğeleri orijinal kümeden kaldırır.
+Syntax:set.intersection_update(set1, set2 ... etc) 
+set1,set2,...:(set1 req).(set2...opt)karşılaştırılacak kümeler
+
+aa = {"a","b","c"}
+b = {"d","e","c"}
+c = {"f","b","c"}
+y = a.intersection_update(b,c)
+z = a.intersection_update(c)
+print(a)
+print(y)
+
+>> {'c'}
+>> None
+----------------------------------
+isdisjoint()
+isdisjoint() yöntemi, öğelerin hiçbiri her iki kümede de yoksa True döndürür, aksi takdirde False döndürür.
+Syntax:set.isdisjoint(set) 
+set:İçinde eşit öğeleri aramak için küme
+
+a = {"a","b","c"}
+b = {"d","e","c"}
+c = {"f","g","h"}
+print(a.isdisjoint(b))
+print(a.isdisjoint(c))
+
+>> False
+>> True
+-----------------------------------
+issubset()
+issubset() yöntemi, kümedeki tüm öğeler belirtilen kümede varsa True döndürür, aksi takdirde False döndürür.
+Syntax: set.issubset(set) 
+set: (req)İçinde eşit öğeleri aramak için küme
+
+a = {"a","b","c"}
+b = {"d","e","c"}
+c = {"c","a","b","z"}
+print(a.issubset(b)) # a kümesi b kümesinin alt kümesimi ?
+print(a.issubset(c)) # a kümesi c kümesinin alt kümesimi ?
+
+>> False
+>> True
+-----------------------------------
+issuperset()
+issuperset() yöntemi, belirtilen kümedeki tüm öğeler orijinal kümede varsa True, aksi halde False döndürür.
+Syntax: set.issuperset(set) 
+set: (req)İçinde eşit öğeleri aramak için küme
+
+x = {"a", "e", "d", "c", "b"}
+y = {"a", "b", "c"}
+z = x.issuperset(y) 
+v = y.issuperset(x)
+print(z)
+print(v)
+
+>> True # x kümesi y kümesinin üst kümesimi?
+>> False # y kümesi x kümesinin üst kümesimi?
+------------------------------------
+union()
+union() yöntemi, orijinal kümedeki tüm öğeleri ve belirtilen küme(ler)deki tüm öğeleri içeren bir küme döndürür.
+Virgülle ayırarak istediğiniz kadar set belirleyebilirsiniz.
+Bir küme olması gerekmez, yinelenebilir herhangi bir nesne olabilir.
+Syntax:set.union(set1, set2...)
+
+a = {"a","b","c"}
+b = {"d","e","c"}
+c = {"a","b","c","d"}
+x = a.union(b,c)
+print(x)
+
+>> {'e', 'b', 'd', 'c', 'a'}
+-----------------------------------
+copy()
+Bu yöntem seti kopyalar.
+Syntax:set.copy()
+
+
+
+
+
+
+
+
+
 
