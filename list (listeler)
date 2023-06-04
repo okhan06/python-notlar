@@ -1,5 +1,5 @@
 LİSTELER
----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 Listeler, Python dilinin ayrılmaz bir parçası olan en basit kaplardır. Listelerin her zaman homojen 
 olması gerekmez, bu da onu Python'daki en güçlü araç yapar. Tek bir liste, Tamsayılar, Dizeler ve 
 Nesneler gibi DataType'ları içerebilir. Listeler değişkendir ve dolayısıyla oluşturulduktan sonra
