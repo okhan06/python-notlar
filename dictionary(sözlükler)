@@ -1,0 +1,222 @@
+dictionary(sözlükler)
+---------------------------------------------------------
+Sözlükler, veri değerlerini anahtar:değer çiftlerinde depolamak için kullanılır.
+Sözlük, sıralı*, değişken ve tekrara izin vermeyen bir koleksiyondur.
+Sözlükler süslü parantezlerle {} yazılır ve anahtarları ve değerleri vardır.
+
+sözlük = {"kırmızı":"elma","sarı":"limon"}
+print(sözlük)
+print(type(sözlük))
+
+>> {'kırmızı': 'elma', 'sarı': 'limon'}
+>><class 'dict'>
+
+dictionary ögeleri:
+--------------------
+Sözlük öğeleri sıralıdır, değiştirilebilir ve tekrarlara izin vermez.
+Sözlük öğeleri, anahtar:değer çiftleri halinde sunulur ve anahtar adı kullanılarak başvurulabilir.
+
+sözlük = {"kırmızı":"elma","sarı":"limon"}
+print(sözlük["kırmızı"])
+>> elma
+
+print((len)sözlük)) # len() ile kaç ögeye sahip oldugu bulunabilir.
+>> 2
+------------------------------------------------------------------
+dict()
+Sözlük oluşturmak için dict() yapıcısını kullanmak da mümkündür.
+sözlük = dict(kırmızı="elma",sarı="limon")
+print(type(sözlük))
+>> <class 'dict'>
+------------------------------------------------------------------
+dictionary de döngü(loop):
+
+sözlük = dict(kırmızı="elma",sarı="limon",yeşil = "ıspanak")
+for i in sözlük:
+    print(sözlük[i])
+elma
+limon
+ıspanak
+
+sözlük = dict(kırmızı="elma",sarı="limon",yeşil = "ıspanak")
+for i in sözlük:
+    print(i)
+    
+kırmızı
+sarı
+yeşil
+-----------------------------------------------------------------
+
+Dictionary metodları:
+------------------------------------------------------------------
+update()
+update() yöntemi, belirtilen öğeleri sözlüğe ekler.
+Belirtilen öğeler bir sözlük veya anahtar değer çiftlerine sahip yinelenebilir bir nesne olabilir.
+Syntax: dictionary.update(iterable) 
+iterable = Sözlüğe eklenecek anahtar değer çiftlerine sahip bir sözlük veya yinelenebilir bir nesne
+
+sözlük = dict(kırmızı="elma",sarı="limon",yeşil = "ıspanak")
+sözlük.update(mor = "havuç")
+print(sözlük)
+
+>> {'kırmızı': 'elma', 'sarı': 'limon', 'yeşil': 'ıspanak', 'mor': 'havuç'}
+------------------------------------------------------------------
+
+clear()
+sözlükteki tüm ögeleri siler.
+Syntax: dictionary.clear() 
+
+sözlük = dict(kırmızı="elma",sarı="limon",yeşil = "ıspanak")
+sözlük.clear()
+print(sözlük)
+>> {}
+------------------------------------------------------------------
+
+pop()
+pop() yöntemi, belirtilen öğeyi sözlükten kaldırır.
+Kaldırılan öğenin değeri, pop() yönteminin dönüş değeridir,
+Syntax: dictionary.pop(keyname, defaultvalue) 
+keyname = Kaldırmak istediğiniz öğenin anahtar adı
+default value = Bu parametre belirtilmezse ve belirtilen anahtara sahip hiçbir 
+öğe bulunamazsa, bir hata oluşur.
+
+sözlük = {"kırmızı":"elma","sarı":"limon","yeşil":"ıspanak"}
+x = sözlük.pop("kırmızı")
+print(x)
+print(sözlük)
+
+>> elma
+>> {'sarı': 'limon', 'yeşil': 'ıspanak'}
+------------------------------------------------------------------
+
+popitem()
+popitem() yöntemi, sözlüğe en son eklenen öğeyi kaldırır. 3.7'den önceki sürümlerde,
+popitem() yöntemi rastgele bir öğeyi kaldırır.
+Kaldırılan öğe, bir demet olarak popitem() yönteminin dönüş değeridir,
+Syntax: dictionary.popitem() 
+
+sözlük = {"kırmızı":"elma","sarı":"limon","yeşil":"ıspanak"}
+x = sözlük.popitem()
+print(x)
+print(sözlük)
+
+>> ('yeşil', 'ıspanak')
+>> {'kırmızı': 'elma', 'sarı': 'limon'}
+------------------------------------------------------------------
+
+items()
+items() yöntemi bir görüntüleme nesnesi döndürür. Görünüm nesnesi, sözlüğün anahtar/değer 
+çiftlerini bir listede demetler halinde içerir.Görünüm nesnesi, sözlükte yapılan 
+değişiklikleri yansıtacaktır.
+Syntax: dictionary.items(
+
+sözlük = {"kırmızı":"elma","sarı":"limon","yeşil":"ıspanak"}
+x = sözlük.items()
+print(x)
+
+>> dict_items([('kırmızı', 'elma'), ('sarı', 'limon'), ('yeşil', 'ıspanak')])
+-----------------------------------------------------------------
+
+keys()
+keys() yöntemi bir görüntüleme nesnesi döndürür. Görünüm nesnesi, sözlüğün anahtarlarını bir liste olarak içerir.
+Görünüm nesnesi, sözlükte yapılan değişiklikleri yansıtacaktır
+Syntax: dictionary.keys() 
+
+sözlük = {"kırmızı":"elma","sarı":"limon","yeşil":"ıspanak"}
+x = sözlük.keys()
+print(x)
+
+>> dict_keys(['kırmızı', 'sarı', 'yeşil'])
+-----------------------------------------------------------------
+
+values()
+Values() yöntemi bir görüntüleme nesnesi döndürür. Görünüm nesnesi, sözlüğün değerlerini bir liste olarak içerir.
+Görünüm nesnesi, sözlükte yapılan değişiklikleri yansıtacaktır,
+
+sözlük = {"kırmızı":"elma","sarı":"limon","yeşil":"ıspanak"}
+x = sözlük.keys()
+sözlük["pembe"]="çilek"
+print(x)
+
+>> dict_keys(['kırmızı', 'sarı', 'yeşil', 'pembe'])
+-----------------------------------------------------------------
+
+get()
+get() yöntemi, belirtilen anahtara sahip öğenin değerini döndürür.
+Syntax: dictionary.get(keyname, value) 
+key = (req)Değerini döndürmek istediğiniz öğenin anahtar adı
+value = (opt)Belirtilen anahtar yoksa döndürülecek bir değer.Varsayılan değer = None
+
+sözlük = {"kırmızı":"elma","sarı":"limon","yeşil":"ıspanak"}
+print(sözlük.get("kırmızı"))
+>>elma
+
+sözlük = {"kırmızı":"elma","sarı":"limon","yeşil":"ıspanak"}
+print(sözlük.get("mavi","böyle bir deger yok"))
+>> böyle bir deger yok 
+----------------------------------------------------------------
+
+fromkeys:
+fromkeys() yöntemi, belirtilen anahtarlara ve belirtilen değere sahip bir sözlük döndürür
+Syntax:  dict.fromkeys(keys, value) 
+keys = (req)Yeni sözlüğün anahtarlarını belirten bir yineleme
+value = (opt)Tüm anahtarların değeri. Varsayılan değer None 'dir.
+
+x = ('anahtar1','anahtar2','anahtar3')
+sözlük = dict.fromkeys(x)
+print(sözlük)
+>> {'anahtar1': None, 'anahtar2': None, 'anahtar3': None}
+
+x = ('anahtar1','anahtar2','anahtar3')
+sözlük = dict.fromkeys(x,"ito")
+print(sözlük)
+>> {'anahtar1': 'ito', 'anahtar2': 'ito', 'anahtar3': 'ito'}
+---------------------------------------------------------------
+
+setdefault:
+setdefault() yöntemi, belirtilen anahtara sahip öğenin değerini döndürür.
+Anahtar yoksa, belirtilen değere sahip anahtarı girin, aşağıdaki örneğe bakın
+Syntax: dictionary.setdefault(keyname, value) 
+keyname = (req) Değerini döndürmek istediğiniz öğenin anahtar adı
+value = (opt) Anahtar varsa, bu parametrenin hiçbir etkisi yoktur.
+Anahtar yoksa, bu değer anahtarın değeri olur.Varsayılan değer None'dır.
+
+Bir sözlüğün mevcut herhangi bir anahtarında Python Dictionary setdefault() yöntemini
+kullanırsak, mevcut anahtarın değerini döndürür, ancak sözlük anahtarını değiştirmez.
+d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+d.setdefault('d',100)
+print(d)
+>> {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+
+Bir sözlüğün var olmayan herhangi bir anahtarında setdefault() yöntemini kullanırsak, 
+eklenen yeni değeri döndürür ve sözlüğü anahtar, değer çifti ile günceller.
+d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+d.setdefault('e',99)
+print(d)
+>> {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 99}
+----------------------------------------------------------------
+
+copy()
+copy() yöntemi, belirtilen sözlüğün bir kopyasını döndürür.
+Syntax: dictionary.copy() 
+
+d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+e = d.copy()
+print(e)
+>> {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
