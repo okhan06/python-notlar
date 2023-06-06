@@ -1,0 +1,104 @@
+Fonksiyonlar:
+----------------------------------------------------------------
+Fonksiyonlar, yalnızca çağrıldığında çalışan bir kod bloğudur.
+Parametre olarak bilinen verileri bir fonksiyona
+iletebilirsiniz.
+Bir işlev sonuç olarak veri döndürebilir.
+Python'da bir fonksiyon, def anahtar kelimesi kullanılarak tanımlanır:
+
+#fonksiyon oluşturma:
+def fonksiyonum():
+    print("Merhaba dünya")
+
+
+#fonksiyon çağırma:
+fonksiyonum()
+>> Merhaba dünya
+-----------------------------------
+Argümanlar(arguments):
+Bilgi,fonksiyonlara bağımsız değişken olarak iletilebilir.
+Bağımsız değişkenler,fonksiyon adından sonra parantez içinde belirtilir. 
+İstediğiniz kadar argüman ekleyebilirsiniz, sadece virgülle ayırın.
+
+def fonksiyonum(isim):
+  print(isim + " Şahin")
+
+fonksiyonum("okan")
+fonksiyonum("metahan")
+fonksiyonum("duru")
+
+>> okan Şahin
+>> metahan Şahin
+>> duru Şahin
+# Bağımsız değişkenler, Python belgelerinde genellikle args olarak kısaltılır.
+
+Argüman Sayısı
+Varsayılan olarak, bir fonksiyon doğru sayıda bağımsız değişkenle çağrılmalıdır. 
+Yani, fonksiyonunuz 2 argüman bekliyorsa, işlevi 2 argümanla çağırmalısınız, daha fazla veya daha az değil.
+
+#Not:Fonksiyonunuzda kaç bağımsız değişkenin iletileceğini bilmiyorsanız,Fonksiyon tanımında parametre adından önce bir * ekleyin.
+#Bu şekilde, işlev bir dizi bağımsız değişken alır ve öğelere buna göre erişebilir:
+------------------------------------
+args:
+Python'daki fonksiyon tanımlarındaki özel sözdizimi *args, bir fonksiyona değişken sayıda argüman iletmek için kullanılır. Anahtar sözcük içermeyen, değişken uzunluklu bir bağımsız değişken listesini iletmek için kullanılır.
+Sözdizimi, değişken sayıda bağımsız değişken almak için * sembolünü kullanmaktır; geleneksel olarak, genellikle args sözcüğüyle birlikte kullanılır.
+*args'ın yapmanıza izin verdiği şey, daha önce tanımladığınız resmi argüman sayısından daha fazla argüman almanızdır. *args ile, mevcut resmi parametrelerinize (sıfır ekstra argüman dahil) herhangi bir sayıda ekstra argüman eklenebilir.
+Örneğin, herhangi bir sayıda bağımsız değişkeni alan ve hepsini birden çarpabilen bir çarpma işlevi yapmak istiyoruz. *args kullanılarak yapılabilir.
+* kullanarak, * ile ilişkilendirdiğimiz değişken yinelenebilir hale gelir, yani üzerinde yineleme, harita ve filtre gibi bazı üst düzey işlevleri çalıştırma gibi şeyler yapabilirsiniz
+
+
+def fonksiyonum(*isim):
+  print(isim)
+
+fonksiyonum("okan","metehan","duru")
+>> ('okan', 'metehan', 'duru')
+
+def fonksiyonum(*isim):
+  for i in isim:
+    print(i+ " Şahin")
+
+fonksiyonum("okan","metehan","duru","gülce")
+
+>> okan Şahin
+>> metehan Şahin
+>> duru Şahin
+>> gülce Şahin
+-----------------------------------
+
+kwargs:
+Fonksiyonunuza kaç tane anahtar sözcük bağımsız değişkeninin aktarılacağını bilmiyorsanız,Fonksiyon tanımında parametre adından önce iki yıldız işareti ekleyin: **.
+Bu şekilde, işlev bir bağımsız değişkenler sözlüğü alır ve buna göre öğelere erişebilir:
+
+def fonksiyonum(**kisi):
+  print("Onun soyadı " + kisi["syd"])
+
+fonksiyonum(isim = "Ali", syd = "Çakır")
+>> Onun soyadı Çakır
+----------------------------------
+Varsayılan Parametre Değeri(Default Parameter)
+İşlevi bağımsız değişken olmadan çağırırsak, varsayılan değeri kullanır:
+
+def my_function(country = "Turkey"):
+  print("I am from " + country)
+
+my_function("Sweden")
+my_function("India")
+my_function() #default parametre
+my_function("Brazil")
+
+>> I am from Sweden
+>> I am from India
+>> I am from Turkey
+>> I am from Brazil
+---------------------------------
+
+
+
+
+
+
+
+
+
+
+
