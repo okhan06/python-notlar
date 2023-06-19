@@ -1,0 +1,59 @@
+lambda:
+-------------------------------------
+Bir lambda fonksiyonu, küçük bir anonim fonksiyondur.
+Herhangi bir sayıda bağımsız değişken alabilir, ancak yalnızca bir ifadeye sahip olabilir.
+
+özellikleri:
+-----------
+Bu fonksiyon, herhangi bir sayıda bağımsız değişkene sahip olabilir, ancak değerlendirilen ve döndürülen yalnızca bir ifadeye sahip olabilir.
+Fonksiyon nesnelerinin gerekli olduğu her yerde lambda fonksiyonlarını kullanmakta özgürsünüz.
+Lambda fonksiyonlarının sözdizimsel olarak tek bir ifadeyle sınırlı olduğunu bilmeniz gerekir.
+fonksiyonlarda diğer ifade türlerinin yanı sıra, belirli programlama alanlarında çeşitli kullanımları vardır.
+
+x = lambda a : a**2
+print(x(5))
+>> 25 # 5 in 2.kuvveti(karesi)
+
+x = lambda a,b:a**b
+print(x(2,4))
+
+Neden Lambda fonksiyonlarını Kullanmalı?
+Lambda'nın gücü, onları başka bir fonksiyon içinde anonim bir fonksiyon olarak kullandığınızda daha iyi gösterilir.
+Diyelim ki bir bağımsız değişken alan bir fonksiyon tanımınız var ve bu bağımsız değişken bilinmeyen bir sayıyla çarpılacak:
+
+def myfunction(n):
+    return lambda a:a**n
+karesi = myfunction(2)
+küpü = myfunction(3)
+print(karesi(2))
+print(küpü(2))
+
+
+map fonksiyonu:
+bir yinelemedeki her öğe için belirtilen bir fonksiyonu yürütür. Öğe, fonksiyona bir parametre olarak gönderilir.
+
+liste1 = [1,2,3,4,5]
+def kare(n):
+    return n*n
+x = list(map(kare,liste1))
+print(x) # map ile liste1 ögelerini tek tek kare fonksiyonuna parametre olarak uyguladık sonucu listeye cevirdik.
+>> [1, 4, 9, 16, 25]
+---------------------
+yada
+---------------------
+liste1 = [1,2,3,4,5]
+x = list(map(lambda a:a*a,liste1))
+print(x)
+>> [1, 4, 9, 16, 25]
+--------------------
+liste1 = [1,2,3,4,5]
+liste2 = [5,6,7,8,9]
+
+x = list(map(lambda a,b:a*b,liste1,liste2))
+print(x)
+>> [5, 12, 21, 32, 45]
+-------------------
+
+
+
+
